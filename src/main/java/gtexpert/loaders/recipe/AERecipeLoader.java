@@ -1058,9 +1058,8 @@ public class AERecipeLoader {
                 .duration(56).EUt(VA[LV])
                 .buildAndRegister();
 
-                .output(ingot, TungstenSteel, 2)
-                .output(nugget, TungstenSteel, 2)
-                .duration(56).EUt(VA[LV])
+        // Storage Housing
+        ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_AE, "network/cells/empty_storage_cell"));
         RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
                 .inputs(AEHelper.aeBlocks.quartzGlass().maybeStack(2).get())
                 .inputs(getModItem(GTEValues.MODID_VANILLA, "redstone", 3, 0))
