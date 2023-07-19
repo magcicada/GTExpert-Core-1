@@ -45,7 +45,6 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.loaders.recipe.CraftingComponent.*;
 import static gtexpert.api.unification.material.GTEMaterials.*;
-import static gtexpert.api.util.GTEUtility.getModItem;
 import static gtexpert.common.metatileentities.GTEMetaTileEntities.*;
 
 public class GTERecipeLoader {
@@ -590,8 +589,9 @@ public class GTERecipeLoader {
         RecipeMaps.ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(screw, Neutronium, 8)
                 .input(CRYSTAL_MAINFRAME_UV, 4)
-                .inputs(getModItem(GTEValues.MODID_AEA, "storage.component", 16, 3))
-                .inputs(getModItem(GTEValues.MODID_AEA, "storage.component", 16, 6))
+                .inputs(AEHelper.aeMaterials.cell16mPart().maybeStack(16).get())
+                .inputs(AEHelper.aeMaterials.fluidCell256kPart().maybeStack(16).get())
+                .inputs(AEHelper.aeMaterials.cell128SpatialPart().maybeStack(16).get())
                 .fluidInputs(SolderingAlloy.getFluid(18432))
                 .fluidInputs(Neutronium.getFluid(9216))
                 .output(GTEMetaItems.GTE_ME_FAKE_COMPONENT, 1)
