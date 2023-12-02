@@ -62,7 +62,8 @@ public class DEFirstDegreeMaterials {
                 .components(Dragon, 1, Obsidian, 1, EnderPearl, 4, LiquidEnderAir, 8)
                 .blast(b -> b
                         .temp(7200, GasTier.HIGHER)
-                        .blastStats(VA[LuV], 600))
+                        .blastStats(VA[LuV], 400)
+                        .vacuumStats(VA[LuV], 100))
                 .toolStats(ToolProperty.Builder.of(80.0F, 2.0F, 4096, 5)
                         .enchantability(14).build())
                 .rotorStats(18.0f, 4.0f, 4096)
@@ -81,8 +82,7 @@ public class DEFirstDegreeMaterials {
                 .blast(b -> b
                         .temp(7200, GasTier.HIGHER)
                         .blastStats(VA[LuV], 600))
-                .toolStats(ToolProperty.Builder.of(120.0F, 2.0F, 7168, 6)
-                        .enchantability(20).build())
+                .toolStats(ToolProperty.Builder.of(140.0F, 80.0F, 7168, 6).enchantability(20).build())
                 .rotorStats(21.5f, 7.5f, 7168)
                 .fluidPipeProperties(10_000_000, 150_000, true, true, true, true)
                 .cableProperties(V[MAX], 1, 8, false)
