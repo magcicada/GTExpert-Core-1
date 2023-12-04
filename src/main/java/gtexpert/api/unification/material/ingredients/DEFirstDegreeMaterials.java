@@ -36,7 +36,7 @@ public class DEFirstDegreeMaterials {
 
         // Pyrotheum
         Pyrotheum = new Material.Builder(24177, gregtechId("pyrotheum"))
-                .fluid(GCYMFluidStorageKeys.MOLTEN, new FluidBuilder().temperature(10273))
+                .fluid(GCYMFluidStorageKeys.MOLTEN, material.getFluid(FluidStorageKeys.LIQUID), new FluidBuilder().temperature(10273))
                 .color(0xE42C13).iconSet(MaterialIconSet.BRIGHT)
                 .flags(NO_WORKING, DISABLE_DECOMPOSITION)
                 .components(Redstone, 1, Sulfur, 1, Blaze, 16)
