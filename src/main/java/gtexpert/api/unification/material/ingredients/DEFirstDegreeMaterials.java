@@ -34,7 +34,14 @@ public class DEFirstDegreeMaterials {
                 .build();
 
         // Pyrotheum
-        Pyrotheum = new Material.Builder(24177, gregtechId("pyrotheum"))
+        Pyrotheum = new Material.Builder(24191, gregtechId("pyrotheum"))
+                .liquid(new FluidBuilder().temperature(6000))
+                .color(0xE42C13).iconSet(MaterialIconSet.FLUID)
+                .flags(NO_WORKING, DISABLE_DECOMPOSITION)
+                .components(Redstone, 1, Sulfur, 1, Blaze, 16)
+                .build();
+
+        Molten_Pyrotheum = new Material.Builder(24177, gregtechId("molten_pyrotheum"))
                 .fluid(GCYMFluidStorageKeys.MOLTEN, new FluidBuilder().temperature(10273))
                 .color(0xE42C13).iconSet(MaterialIconSet.BRIGHT)
                 .flags(NO_WORKING, DISABLE_DECOMPOSITION)
@@ -94,7 +101,7 @@ public class DEFirstDegreeMaterials {
                 .dust()
                 .color(0x000000).iconSet(MaterialIconSet.ROUGH)
                 .flags(NO_WORKING, DISABLE_DECOMPOSITION)
-                .components(AwakenedDraconium, 8, Pyrotheum, 8, Dragon, 8)
+                .components(AwakenedDraconium, 8, Molten_Pyrotheum, 8, Dragon, 8)
                 .build();
     }
 }

@@ -77,6 +77,7 @@ public class GTEMaterials {
     public static Material FluixAlloy;
     public static Material Cryotheum;
     public static Material Pyrotheum;
+    public static Material Molten_Pyrotheum;
     public static Material Dragon;
     public static Material Chaos;
     public static Material Draconium;
