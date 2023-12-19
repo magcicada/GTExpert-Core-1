@@ -47,6 +47,9 @@ import gtexpert.common.blocks.GTEMetaBlocks;
 import gtexpert.common.items.GTEMetaItems;
 import gtexpert.common.metatileentities.GTEMultiMetaTileEntities;
 
+import morph.avaritia.init.ModBlocks;
+import morph.avaritia.init.ModItems;
+
 public class GTERecipeLoader {
 
     public static void init() {
@@ -58,6 +61,17 @@ public class GTERecipeLoader {
     }
 
     private static void materials() {
+        // Infinity Trans
+        ModHandler.addShapelessRecipe("infinity_block_trans-1", new ItemStack(ModBlocks.resource, 2, 1),
+                OreDictUnifier.get(block, GTEMaterials.Infinity), OreDictUnifier.get(block, GTEMaterials.Infinity));
+        ModHandler.addShapelessRecipe("infinity_block_trans-2", OreDictUnifier.get(block, GTEMaterials.Infinity, 2),
+                new ItemStack(ModBlocks.resource, 1, 1), new ItemStack(ModBlocks.resource, 1, 1));
+
+        ModHandler.addShapelessRecipe("infinity_ingot_trans-1", new ItemStack(ModItems.resource, 2, 6),
+                OreDictUnifier.get(ingot, GTEMaterials.Infinity), OreDictUnifier.get(ingot, GTEMaterials.Infinity));
+        ModHandler.addShapelessRecipe("infinity_ingot_trans-2", OreDictUnifier.get(ingot, GTEMaterials.Infinity, 2),
+                new ItemStack(ModItems.resource, 1, 6), new ItemStack(ModItems.resource, 1, 6));
+
         // Osmium
         Materials.Osmium.getProperty(PropertyKey.ORE).setOreByProducts(Materials.Iridium);
 

@@ -149,19 +149,34 @@ public class DraconicRecipeLoader {
 
         // Draconium Block
         ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_DE, "draconium_block"));
-        ModHandler.addMirroredShapedRecipe("de_draconium_block", new ItemStack(DEFeatures.draconiumBlock), "B", 'B',
-                OreDictUnifier.get(block, GTEMaterials.Draconium));
-        ModHandler.addMirroredShapedRecipe("ceu_draconium_block", OreDictUnifier.get(block, GTEMaterials.Draconium),
-                "B", 'B',
-                new ItemStack(DEFeatures.draconiumBlock));
+        ModHandler.addShapelessRecipe("draconium_block_trans-1", new ItemStack(DEFeatures.draconiumBlock, 2),
+                OreDictUnifier.get(block, GTEMaterials.Draconium), OreDictUnifier.get(block, GTEMaterials.Draconium));
+        ModHandler.addShapelessRecipe("draconium_block_trans-2", OreDictUnifier.get(block, GTEMaterials.Draconium, 2),
+                new ItemStack(DEFeatures.draconiumBlock), new ItemStack(DEFeatures.draconiumBlock));
+        ModHandler.addShapelessRecipe("draconium_ingot_trans-1", new ItemStack(DEFeatures.draconiumIngot, 2),
+                OreDictUnifier.get(ingot, GTEMaterials.Draconium), OreDictUnifier.get(ingot, GTEMaterials.Draconium));
+        ModHandler.addShapelessRecipe("draconium_ingot_trans-2", OreDictUnifier.get(ingot, GTEMaterials.Draconium, 2),
+                new ItemStack(DEFeatures.draconiumIngot), new ItemStack(DEFeatures.draconiumIngot));
+        ModHandler.addShapelessRecipe("draconium_dust_trans-1", new ItemStack(DEFeatures.draconiumDust, 2),
+                OreDictUnifier.get(dust, GTEMaterials.Draconium), OreDictUnifier.get(dust, GTEMaterials.Draconium));
+        ModHandler.addShapelessRecipe("draconium_dust_trans-2", OreDictUnifier.get(dust, GTEMaterials.Draconium, 2),
+                new ItemStack(DEFeatures.draconiumDust), new ItemStack(DEFeatures.draconiumDust));
 
         // Awakened Draconium Block
         ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_DE, "draconic_block"));
-        ModHandler.addMirroredShapedRecipe("de_draconic_block", new ItemStack(DEFeatures.draconicBlock), "B", 'B',
+        ModHandler.addShapelessRecipe("draconic_block_trans-1", new ItemStack(DEFeatures.draconicBlock, 2),
+                OreDictUnifier.get(block, GTEMaterials.AwakenedDraconium),
                 OreDictUnifier.get(block, GTEMaterials.AwakenedDraconium));
-        ModHandler.addMirroredShapedRecipe("ceu_draconic_block",
-                OreDictUnifier.get(block, GTEMaterials.AwakenedDraconium), "B",
-                'B', new ItemStack(DEFeatures.draconicBlock));
+        ModHandler.addShapelessRecipe("draconic_block_trans-2",
+                OreDictUnifier.get(block, GTEMaterials.AwakenedDraconium, 2), new ItemStack(DEFeatures.draconicBlock),
+                new ItemStack(DEFeatures.draconicBlock));
+        ModHandler.addShapelessRecipe("draconic_ingot_trans-1", new ItemStack(DEFeatures.draconicIngot, 2),
+                OreDictUnifier.get(ingot, GTEMaterials.AwakenedDraconium),
+                OreDictUnifier.get(ingot, GTEMaterials.AwakenedDraconium));
+        ModHandler.addShapelessRecipe("draconic_ingot_trans-2",
+                OreDictUnifier.get(ingot, GTEMaterials.AwakenedDraconium, 2), new ItemStack(DEFeatures.draconicIngot),
+                new ItemStack(DEFeatures.draconicIngot));
+
         RecipeMaps.IMPLOSION_RECIPES.recipeBuilder()
                 .input(DEFeatures.dragonHeart, 1)
                 .input(block, GTEMaterials.Draconium, 4)
