@@ -7,6 +7,7 @@ import static gregtech.api.util.GTUtility.gregtechId;
 import static gtexpert.api.unification.GTEElements.*;
 import static gtexpert.api.unification.material.GTEMaterials.*;
 
+import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.ToolProperty;
 
@@ -23,6 +24,7 @@ public class AvaritiaFirstDegreeMaterials {
         // Infinity
         Infinity = new Material.Builder(24186, gregtechId("infinity"))
                 .dust(7).ingot(7)
+                .liquid(new FluidBuilder().temperature(4000))
                 .iconSet(GTEMaterialIconSet.INFINITY)
                 .flags(EXT2_METAL, GENERATE_DENSE, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FRAME,
                         GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING, GENERATE_ROTOR, GENERATE_ROUND,
