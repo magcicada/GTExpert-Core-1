@@ -35,6 +35,9 @@ dependencies {
     compileOnlyApi ("com.cleanroommc:groovyscript:0.7.1") { transitive = false } // GrS 0.7.1
     implementation rfg.deobf("curse.maven:ctm-267602:2915363") // CTM 1.0.2.31
     implementation rfg.deobf("curse.maven:shadowfacts-forgelin-248453:2785465") // Forgelin 1.8.4
+    //implementation rfg.deobf("curse.maven:avaritia-1-10-261348:3143349") // Avaritia
+    implementation (files("libs/Avaritia-1.12.2-kedition-universal.jar")) // Avaritia 1.1x Kedition 1.3
+    implementation rfg.deobf("curse.maven:nae2-884359:4955559") // NAE2
 
     // Switchable Dependencies
     if (project.useAE2uelExtended.toBoolean()) {
