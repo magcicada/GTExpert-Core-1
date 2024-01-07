@@ -880,6 +880,70 @@ public class AERecipeLoader {
                 .duration(10).EUt(VA[ULV])
                 .buildAndRegister();
 
+        // 256k Crafting Storage
+        ModHandler.removeRecipeByName(
+                new ResourceLocation(GTEValues.MODID_NAE2, "block/crafting/storage_256k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(aeBlocks.craftingUnit().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 1))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_crafting_256k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_crafting_256k"))
+                .outputs(aeBlocks.craftingUnit().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 1))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // 1024k Crafting Storage
+        ModHandler.removeRecipeByName(
+                new ResourceLocation(GTEValues.MODID_NAE2, "block/crafting/storage_1024k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(aeBlocks.craftingUnit().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 2))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_crafting_1024k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_crafting_1024k"))
+                .outputs(aeBlocks.craftingUnit().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 2))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // 4096k Crafting Storage
+        ModHandler.removeRecipeByName(
+                new ResourceLocation(GTEValues.MODID_NAE2, "block/crafting/storage_4096k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(aeBlocks.craftingUnit().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 3))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_crafting_4096k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_crafting_4096k"))
+                .outputs(aeBlocks.craftingUnit().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 3))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // 16384k Crafting Storage
+        ModHandler.removeRecipeByName(
+                new ResourceLocation(GTEValues.MODID_NAE2, "block/crafting/storage_16384k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(aeBlocks.craftingUnit().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 4))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_crafting_16384k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_crafting_16384k"))
+                .outputs(aeBlocks.craftingUnit().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 4))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
         if (ae2Integration.enableAE2UELExtended) {
             // 1mb Crafting Storage
             ModHandler.removeRecipeByName(
@@ -1148,6 +1212,86 @@ public class AERecipeLoader {
                 .duration(10).EUt(VA[ULV])
                 .buildAndRegister();
 
+        // 256k Storage Cell
+        ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_NAE2, "item/cell/storage_cell_256k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 1))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_256k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputNBT(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_256k").getItem(), NBTMatcher.ANY,
+                        NBTCondition.ANY)
+                .outputs(aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 1))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // 1024k Storage Cell
+        ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_NAE2, "item/cell/storage_cell_1024k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 2))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_1024k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputNBT(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_1024k").getItem(), NBTMatcher.ANY,
+                        NBTCondition.ANY)
+                .outputs(aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 2))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // 4096k Storage Cell
+        ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_NAE2, "item/cell/storage_cell_4096k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 3))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_4096k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputNBT(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_4096k").getItem(), NBTMatcher.ANY,
+                        NBTCondition.ANY)
+                .outputs(aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 3))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // 16384k Storage Cell
+        ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_NAE2, "item/cell/storage_cell_16384k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 4))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_16384k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputNBT(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_16384k").getItem(), NBTMatcher.ANY,
+                        NBTCondition.ANY)
+                .outputs(aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 4))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // void Storage Cell
+        ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_NAE2, "storage_cell_void"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 0))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_void"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputNBT(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_void").getItem(), NBTMatcher.ANY,
+                        NBTCondition.ANY)
+                .outputs(aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 0))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
         // 1k Fluid Storage Cell
         ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_AE, "network/cells/fluid_storage_cell_1k"));
         ModHandler
@@ -1233,6 +1377,107 @@ public class AERecipeLoader {
                         GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
                         aeMaterials.emptyStorageCell().maybeStack(1).get())
                 .outputs(aeMaterials.fluidCell64kPart().maybeStack(1).get())
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // 256k Fluid Storage Cell
+        ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_NAE2, "item/cell/storage_cell_fluid_256k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(Loader.isModLoaded(GTEValues.MODID_AEA) ?
+                        GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
+                        aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 5))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_fluid_256k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputNBT(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_fluid_256k").getItem(),
+                        NBTMatcher.ANY, NBTCondition.ANY)
+                .outputs(Loader.isModLoaded(GTEValues.MODID_AEA) ?
+                        GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
+                        aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 5))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // 1024k Fluid Storage Cell
+        ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_NAE2, "item/cell/storage_cell_fluid_1024k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(Loader.isModLoaded(GTEValues.MODID_AEA) ?
+                        GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
+                        aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 6))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_fluid_1024k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputNBT(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_fluid_1024k").getItem(),
+                        NBTMatcher.ANY, NBTCondition.ANY)
+                .outputs(Loader.isModLoaded(GTEValues.MODID_AEA) ?
+                        GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
+                        aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 6))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // 4096k Fluid Storage Cell
+        ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_NAE2, "item/cell/storage_cell_fluid_4096k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(Loader.isModLoaded(GTEValues.MODID_AEA) ?
+                        GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
+                        aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 7))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_fluid_4096k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputNBT(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_fluid_4096k").getItem(),
+                        NBTMatcher.ANY, NBTCondition.ANY)
+                .outputs(Loader.isModLoaded(GTEValues.MODID_AEA) ?
+                        GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
+                        aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 7))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // 16384k Fluid Storage Cell
+        ModHandler
+                .removeRecipeByName(new ResourceLocation(GTEValues.MODID_NAE2, "item/cell/storage_cell_fluid_16384k"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(Loader.isModLoaded(GTEValues.MODID_AEA) ?
+                        GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
+                        aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 8))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_fluid_16384k"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputNBT(GTEUtility.getModItem(GTEValues.MODID_NAE2, "storage_cell_fluid_16384k").getItem(),
+                        NBTMatcher.ANY, NBTCondition.ANY)
+                .outputs(Loader.isModLoaded(GTEValues.MODID_AEA) ?
+                        GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
+                        aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 8))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+
+        // void Fluid Storage Cell
+        ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_NAE2, "fluid_storage_cell_void"));
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputs(Loader.isModLoaded(GTEValues.MODID_AEA) ?
+                        GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
+                        aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .inputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 0))
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "fluid_storage_cell_void"))
+                .duration(10).EUt(VA[ULV])
+                .buildAndRegister();
+        RecipeMaps.PACKER_RECIPES.recipeBuilder()
+                .inputNBT(GTEUtility.getModItem(GTEValues.MODID_NAE2, "fluid_storage_cell_void").getItem(),
+                        NBTMatcher.ANY, NBTCondition.ANY)
+                .outputs(Loader.isModLoaded(GTEValues.MODID_AEA) ?
+                        GTEUtility.getModItem(GTEValues.MODID_AEA, "storage.casing", 1, 1) :
+                        aeMaterials.emptyStorageCell().maybeStack(1).get())
+                .outputs(GTEUtility.getModItem(GTEValues.MODID_NAE2, "material", 1, 0))
                 .duration(10).EUt(VA[ULV])
                 .buildAndRegister();
 

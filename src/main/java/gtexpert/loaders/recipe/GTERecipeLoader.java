@@ -37,8 +37,6 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 
-import gregicality.multiblocks.api.fluids.GCYMFluidStorageKeys;
-
 import gtexpert.api.GTEValues;
 import gtexpert.api.recipes.GTERecipeMaps;
 import gtexpert.api.unification.material.GTEMaterials;
@@ -172,7 +170,7 @@ public class GTERecipeLoader {
                     .circuitMeta(6)
                     .input(dust, Materials.Stone, 32)
                     .fluidInputs(GTEMaterials.Cryotheum.getFluid(1000))
-                    .fluidOutputs(GTEMaterials.Pyrotheum.getFluid(GCYMFluidStorageKeys.MOLTEN, 250))
+                    .fluidOutputs(GTEMaterials.Pyrotheum.getFluid(250))
                     .fluidOutputs(Materials.LiquidAir.getFluid(10000))
                     .duration(20).EUt(VA[LuV])
                     .buildAndRegister();
@@ -180,7 +178,7 @@ public class GTERecipeLoader {
                     .circuitMeta(6)
                     .input(dust, Materials.Netherrack, 32)
                     .fluidInputs(GTEMaterials.Cryotheum.getFluid(1000))
-                    .fluidOutputs(GTEMaterials.Pyrotheum.getFluid(GCYMFluidStorageKeys.MOLTEN, 250))
+                    .fluidOutputs(GTEMaterials.Pyrotheum.getFluid(250))
                     .fluidOutputs(Materials.LiquidNetherAir.getFluid(10000))
                     .duration(20).EUt(VA[LuV])
                     .buildAndRegister();
@@ -188,7 +186,7 @@ public class GTERecipeLoader {
                     .circuitMeta(6)
                     .input(dust, Materials.Endstone, 32)
                     .fluidInputs(GTEMaterials.Cryotheum.getFluid(1000))
-                    .fluidOutputs(GTEMaterials.Pyrotheum.getFluid(GCYMFluidStorageKeys.MOLTEN, 250))
+                    .fluidOutputs(GTEMaterials.Pyrotheum.getFluid(250))
                     .fluidOutputs(Materials.LiquidEnderAir.getFluid(10000))
                     .duration(20).EUt(VA[LuV])
                     .buildAndRegister();

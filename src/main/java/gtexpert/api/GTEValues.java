@@ -25,6 +25,7 @@ public class GTEValues {
             MODID_AEA = "aeadditions",
             MODID_AEFC = "ae2fc",
             MODID_EXCPU = "extracpus",
+            MODID_NAE2 = "nae2",
             MODID_DE = "draconicevolution",
             MODID_DA = "draconicadditions",
             MODID_CHISEL = "chisel",

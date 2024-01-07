@@ -2,6 +2,7 @@ package gtexpert.loaders.recipe.ingredients;
 
 import static gregtech.api.unification.ore.OrePrefix.*;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import gregtech.api.recipes.ModHandler;
@@ -14,6 +15,9 @@ import gtexpert.api.GTEValues;
 import gtexpert.api.unification.material.GTEMaterials;
 import gtexpert.api.util.GTEUtility;
 
+import morph.avaritia.init.ModBlocks;
+import morph.avaritia.init.ModItems;
+
 public class AvaritiaRecipeLoader {
 
     public static void init() {
@@ -25,34 +29,35 @@ public class AvaritiaRecipeLoader {
         // Neutronium
         // ########################################
         // Dust
-        ModHandler.addMirroredShapedRecipe("avaritia_neutronium_dust",
-                GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "resource", 1, 2),
-                "D", 'D', OreDictUnifier.get(dustTiny, Materials.Neutronium));
-        ModHandler.addMirroredShapedRecipe("ceu_neutronium_dust", OreDictUnifier.get(dustTiny, Materials.Neutronium),
-                "D", 'D', GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "resource", 1, 2));
         ModHandler.removeRecipeByOutput(GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "resource", 9, 2));
+        ModHandler.addShapelessRecipe("neutronium_dust_trans-1", new ItemStack(ModItems.resource, 2, 2),
+                OreDictUnifier.get(dustTiny, Materials.Neutronium), OreDictUnifier.get(dustTiny, Materials.Neutronium));
+        ModHandler.addShapelessRecipe("neutronium_dust_trans-2", OreDictUnifier.get(dustTiny, Materials.Neutronium, 2),
+                new ItemStack(ModItems.resource, 1, 2), new ItemStack(ModItems.resource, 1, 2));
 
         // Nugget
         ModHandler.removeRecipeByOutput(GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "resource", 1, 3));
         ModHandler.removeRecipeByOutput(GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "resource", 9, 3));
+        ModHandler.addShapelessRecipe("neutronium_nugget_trans-1", new ItemStack(ModItems.resource, 2, 3),
+                OreDictUnifier.get(nugget, Materials.Neutronium), OreDictUnifier.get(nugget, Materials.Neutronium));
+        ModHandler.addShapelessRecipe("neutronium_nugget_trans-2", OreDictUnifier.get(nugget, Materials.Neutronium, 2),
+                new ItemStack(ModItems.resource, 1, 3), new ItemStack(ModItems.resource, 1, 3));
 
         // Ingot
         ModHandler.removeRecipeByName(
                 new ResourceLocation(GTEValues.MODID_AVARITIA, "blocks/resource/un_neutronium_block"));
-        ModHandler.addMirroredShapedRecipe("avaritia_neutronium_ingot",
-                GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "resource", 1, 4),
-                "I", 'I', OreDictUnifier.get(ingot, Materials.Neutronium));
-        ModHandler.addMirroredShapedRecipe("ceu_neutronium_block", OreDictUnifier.get(ingot, Materials.Neutronium),
-                "I", 'I', GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "resource", 1, 4));
+        ModHandler.addShapelessRecipe("neutronium_ingot_trans-1", new ItemStack(ModItems.resource, 2, 4),
+                OreDictUnifier.get(ingot, Materials.Neutronium), OreDictUnifier.get(ingot, Materials.Neutronium));
+        ModHandler.addShapelessRecipe("neutronium_ingot_trans-2", OreDictUnifier.get(ingot, Materials.Neutronium, 2),
+                new ItemStack(ModItems.resource, 1, 4), new ItemStack(ModItems.resource, 1, 4));
 
         // Block
         ModHandler
                 .removeRecipeByName(new ResourceLocation(GTEValues.MODID_AVARITIA, "blocks/resource/neutronium_block"));
-        ModHandler.addMirroredShapedRecipe("avaritia_neutronium_ingot",
-                GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "block_resource"),
-                "B", 'B', OreDictUnifier.get(block, Materials.Neutronium));
-        ModHandler.addMirroredShapedRecipe("ceu_neutronium_block", OreDictUnifier.get(block, Materials.Neutronium),
-                "B", 'B', GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "block_resource"));
+        ModHandler.addShapelessRecipe("neutronium_block_trans-1", new ItemStack(ModBlocks.resource, 2, 0),
+                OreDictUnifier.get(block, GTEMaterials.Infinity), OreDictUnifier.get(block, Materials.Neutronium));
+        ModHandler.addShapelessRecipe("neutronium_block_trans-2", OreDictUnifier.get(block, Materials.Neutronium, 2),
+                new ItemStack(ModBlocks.resource, 1, 0), new ItemStack(ModBlocks.resource, 1, 0));
         RecipeMaps.COMPRESSOR_RECIPES.recipeBuilder()
                 .input(ingot, Materials.Neutronium, 9)
                 .output(block, Materials.Neutronium)
@@ -90,7 +95,7 @@ public class AvaritiaRecipeLoader {
                 .notConsumable(MetaItems.SHAPE_MOLD_INGOT)
                 .inputs(GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "block_resource", 1, 2))
                 .outputs(GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "resource", 9, 1))
-                .duration(4000).EUt(7)
+                .duration(400).EUt(2)
                 .buildAndRegister();
 
         // ########################################
@@ -99,19 +104,17 @@ public class AvaritiaRecipeLoader {
         // Ingot
         ModHandler.removeRecipeByName(
                 new ResourceLocation(GTEValues.MODID_AVARITIA, "blocks/resource/un_infinity_block"));
-        ModHandler.addMirroredShapedRecipe("avaritia_infinity_ingot",
-                GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "resource", 1, 6),
-                "I", 'I', OreDictUnifier.get(ingot, GTEMaterials.Infinity));
-        ModHandler.addMirroredShapedRecipe("ceu_infinity_block", OreDictUnifier.get(ingot, GTEMaterials.Infinity),
-                "I", 'I', GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "resource", 1, 6));
+        ModHandler.addShapelessRecipe("infinity_ingot_trans-1", new ItemStack(ModItems.resource, 2, 6),
+                OreDictUnifier.get(ingot, GTEMaterials.Infinity), OreDictUnifier.get(ingot, GTEMaterials.Infinity));
+        ModHandler.addShapelessRecipe("infinity_ingot_trans-2", OreDictUnifier.get(ingot, GTEMaterials.Infinity, 2),
+                new ItemStack(ModItems.resource, 1, 6), new ItemStack(ModItems.resource, 1, 6));
 
         // Block
         ModHandler.removeRecipeByName(new ResourceLocation(GTEValues.MODID_AVARITIA, "blocks/resource/infinity_block"));
-        ModHandler.addMirroredShapedRecipe("avaritia_infinity_ingot",
-                GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "block_resource", 1, 1),
-                "B", 'B', OreDictUnifier.get(block, GTEMaterials.Infinity));
-        ModHandler.addMirroredShapedRecipe("ceu_infinity_block", OreDictUnifier.get(block, GTEMaterials.Infinity),
-                "B", 'B', GTEUtility.getModItem(GTEValues.MODID_AVARITIA, "block_resource", 1, 1));
+        ModHandler.addShapelessRecipe("infinity_block_trans-1", new ItemStack(ModBlocks.resource, 2, 1),
+                OreDictUnifier.get(block, GTEMaterials.Infinity), OreDictUnifier.get(block, GTEMaterials.Infinity));
+        ModHandler.addShapelessRecipe("infinity_block_trans-2", OreDictUnifier.get(block, GTEMaterials.Infinity, 2),
+                new ItemStack(ModBlocks.resource, 1, 1), new ItemStack(ModBlocks.resource, 1, 1));
         RecipeMaps.COMPRESSOR_RECIPES.recipeBuilder()
                 .input(ingot, GTEMaterials.Infinity, 9)
                 .output(block, GTEMaterials.Infinity)
